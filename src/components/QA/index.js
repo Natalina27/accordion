@@ -1,15 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import clx from "classnames";
 
 import s from './styles.module.scss';
 
-export const QA = ({index, isOpen, source }) => {
-
-    const [openAnswer, setOpenAnswer] = useState(isOpen);
-
-    const handleAnswerClick = () => {
-        setOpenAnswer(!openAnswer);
-    }
+export const QA = ({index, source, openAnswer, handleAnswerClick, id }) => {
 
     const style = clx({
         [s.accordionItem]:true,
@@ -18,7 +12,7 @@ export const QA = ({index, isOpen, source }) => {
 
     return (
         <div className={style}>
-            <div className={s.accordionQuestion} onClick={handleAnswerClick}>
+            <div className={s.accordionQuestion} onClick={()=>handleAnswerClick(id)}>
                 <span>{index+1}.{source.question}</span>
             </div>
             <p className={s.accordionAnswer}>

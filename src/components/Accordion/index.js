@@ -3,16 +3,16 @@ import {QA} from "../QA";
 
 import s from './styles.module.scss';
 
-export const Accordion = ({source, title}) => {
+export const Accordion = ({source, title, openAnswer,handleAnswerClick }) => {
 
-
-
-    const qaJSX = () => source.map(({id, isOpen, ...source}, index)=>
+    const qaJSX = () => source.map(({id, isOpen, ...source}, index) =>
         <QA key={id}
             id={id}
             isOpen={isOpen}
             source={source}
             index={index}
+            handleAnswerClick={handleAnswerClick}
+            openAnswer={openAnswer}
         />);
 
     return (

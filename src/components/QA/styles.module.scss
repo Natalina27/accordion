@@ -1,24 +1,63 @@
-.accordionItem {
-  margin-bottom: 10px;
+.accordion{
+  font-family: Verdana sans-serif;
+  width: 800px;
 
-  &:hover {
-    .accordionQuestion {
-      color: #000;
+  h1 {
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  &Question {
+    position: relative;
+    padding: 15px 30px;
+    background: #F1F4FB;
+    font-size: 16px;
+    color: rgba(0,0,0,0.6);
+    line-height: 24px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-bottom: 22px;
+    transition: color 0.3s;
+
+    &::after {
+      content: '+';
+      position: absolute;
+      right: 30px;
     }
   }
 
-  &.selected {
-    .accordionQuestion {
-      cursor: initial;
-      color: #4886FF;
+  &Answer {
+    padding: 0 30px;
+    margin: 0 0 22px;
+    font-size: 16px;
+    color: #000;
+    display: none;
+  }
 
-      &::after {
-        content: '-';
+  &Item {
+    margin-bottom: 10px;
+
+    &:hover {
+      .accordionQuestion {
+        color: #000;
       }
     }
 
-    .accordionAnswer {
-      display: inline-block;
+    &.selected {
+      .accordionQuestion {
+        cursor: initial;
+        color: #4886FF;
+
+        &::after {
+          content: '-';
+        }
+      }
+
+      .accordionAnswer {
+        display: inline-block;
+      }
     }
   }
 }
+

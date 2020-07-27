@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Accordion} from "../Accordion";
 
 const source = [
@@ -23,7 +23,17 @@ const source = [
 ];
 
 export const App = () => {
+  const {isOpen} = source;
+  const [openAnswer, setOpenAnswer] = useState(isOpen);
+
+  const handleAnswerClick = (id) => {
+    source.map(el => el.id === id && setOpenAnswer(!openAnswer));
+  }
+
   return (
-      <Accordion source={source}/>
+      <Accordion source={source}
+                 openAnswer={openAnswer}
+                 handleAnswerClick={handleAnswerClick}
+      />
   )
 };
