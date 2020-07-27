@@ -3,17 +3,17 @@ import clx from "classnames";
 
 import s from './styles.module.scss';
 
-export const QA = ({index, source, openAnswer, handleAnswerClick, id }) => {
+export const QA = ({idx, source, handleAnswerClick }) => {
 
     const style = clx({
         [s.accordionItem]:true,
-        [s.selected]: openAnswer
+        [s.selected]: source.isOpen
     });
-
+    console.log(source);
     return (
         <div className={style}>
-            <div className={s.accordionQuestion} onClick={()=>handleAnswerClick(id)}>
-                <span>{index+1}.{source.question}</span>
+            <div className={s.accordionQuestion} onClick={()=>handleAnswerClick(source.id)}>
+                <span>{idx+1}.{source.question}</span>
             </div>
             <p className={s.accordionAnswer}>
                 {source.answer}
