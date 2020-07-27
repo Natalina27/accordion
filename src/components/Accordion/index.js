@@ -1,7 +1,7 @@
 import React from 'react';
 import {QA} from "../QA";
 
-import Styles from './styles.module.scss';
+import s from './styles.module.scss';
 
 export const Accordion = ({source, title}) => {
 
@@ -16,7 +16,7 @@ export const Accordion = ({source, title}) => {
         />);
 
     return (
-        <section className={Styles.accordion}>
+        <section className={s.accordion}>
             <h1>{title}</h1>
             {qaJSX()}
         </section>

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import clx from "classnames";
-import Styles from './styles.module.scss';
+
+import s from './styles.module.scss';
 
 export const QA = ({index, isOpen, source }) => {
 
@@ -11,16 +12,16 @@ export const QA = ({index, isOpen, source }) => {
     }
 
     const style = clx({
-        [Styles.accordionItem]:true,
-        [Styles.selected]: openAnswer
+        [s.accordionItem]:true,
+        [s.selected]: openAnswer
     });
 
     return (
         <div className={style}>
-            <div className={Styles.accordionQuestion} onClick={handleAnswerClick}>
+            <div className={s.accordionQuestion} onClick={handleAnswerClick}>
                 <span>{index+1}.{source.question}</span>
             </div>
-            <p className={Styles.accordionAnswer}>
+            <p className={s.accordionAnswer}>
                 {source.answer}
             </p>
         </div>
