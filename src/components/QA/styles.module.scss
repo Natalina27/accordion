@@ -1,0 +1,24 @@
+.accordionItem {
+  margin-bottom: 10px;
+
+  &:hover {
+    .accordionQuestion {
+      color: #000;
+    }
+  }
+
+  &.selected {
+    .accordionQuestion {
+      cursor: initial;
+      color: #4886FF;
+
+      &::after {
+        content: '-';
+      }
+    }
+
+    .accordionAnswer {
+      display: inline-block;
+    }
+  }
+}
